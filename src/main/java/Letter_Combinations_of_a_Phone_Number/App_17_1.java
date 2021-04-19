@@ -3,11 +3,24 @@ package Letter_Combinations_of_a_Phone_Number;
 import java.util.*;
 
 public class App_17_1 {
-    private Map<Character, String> letters = Map.of(
-            '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
-            '6', "mno", '7', "pqrs", '8', "tuv", '9', "wxyz");
+    private static Map<Character, String> letters = new HashMap<>();
 
-    public List<String> letterCombinations(String digits) {
+
+    public static void main(String[] args) {
+        letters.put('2', "abc");
+        letters.put('3', "def");
+        letters.put('4', "ghi");
+        letters.put('5', "jkl");
+        letters.put('6', "mno");
+        letters.put('7', "pqrs");
+        letters.put('8', "tuv");
+        letters.put('9', "wxyz");
+
+        System.out.println(letterCombinations("235")) ;
+
+    }
+    public static List<String> letterCombinations(String digits) {
+
         Queue<String> queue = new LinkedList<>();
 
         if(digits == null || digits.length() == 0){
